@@ -1,0 +1,33 @@
+{
+  "name": "solid-service-template",
+  "version": "0.0.1",
+  "description": "A template for a Solid service.",
+  "main": "index.js",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare:pods": "npm run prepare:pods:accounts && npm run prepare:pods:data",
+    "prepare:pods:accounts": "node scripts/add-pod-accounts.js",
+    "prepare:pods:data": "cpy initial-pod-data/* pods/example/ --flat",
+    "start:pods": "npx @solid/community-server -c @css:config/file-no-setup.json -f pods",
+    "reset:pods": "npx rimraf pods && npm run prepare:pods",
+    "start": "node index.js"
+  },
+  "author": "Pieter Heyvaert (https://pieterheyvaert.com)",
+  "license": "MIT",
+  "devDependencies": {
+    "@solid/community-server": "^6.0.1",
+    "cpy-cli": "^5.0.0",
+    "node-fetch": "^3.3.1",
+    "rimraf": "^5.0.1"
+  },
+  "dependencies": {
+    "@comunica/query-sparql": "^2.8.0",
+    "@inrupt/solid-client-authn-core": "^1.17.1",
+    "fs-extra": "^11.1.1"
+  },
+  "engines": {
+    "node": "^18.16.1 || ^16.20.1"
+  }
+}
