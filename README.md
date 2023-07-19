@@ -3,7 +3,7 @@
 This template helps you to get started with creating a Solid service.
 We rely on the [Client Credentials](https://communitysolidserver.github.io/CommunitySolidServer/6.x/usage/client-credentials/) 
 offered by the [Community Solid Server](https://github.com/CommunitySolidServer/CommunitySolidServer) (CSS).
-This advantage is that it allows the service to work without user interaction for authentication.
+The advantage is that it allows the service to work without user interaction for authentication.
 The disadvantage is that it doesn't work with other Solid servers.
 This only applies to authentication.
 Once authentication is done, 
